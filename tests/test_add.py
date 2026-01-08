@@ -9,6 +9,7 @@ def test_add_negative_numbers():
 
 def test_add_mixed_sign_numbers():
     assert add(-2, 3) == 1
+    assert add(2, -3) == -1
 
 def test_add_zero():
     assert add(0, 0) == 0
@@ -16,4 +17,4 @@ def test_add_zero():
     assert add(5, 0) == 5
 
 def test_add_large_numbers():
-    assert add(1000000, 999999) == 1999999
+    assert add(10**6, 10**6) == 2000000
