@@ -17,4 +17,4 @@ def test_subtract_zero():
     assert subtract(5, 0) == 5
 
 def test_subtract_large_numbers():
-    assert subtract(1000000, 999999) == 1
+    assert subtract(10**6, 10**5) == 900000
