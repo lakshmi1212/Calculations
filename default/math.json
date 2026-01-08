@@ -34,8 +34,8 @@
   },
   "jobs": [
     {
-      "job_id": "ci",
-      "job_name": "Run Python tests",
+      "job_id": "test",
+      "job_name": "Run Pytest",
       "runs_on": "ubuntu-latest",
       "steps": [
         {
@@ -46,7 +46,7 @@
         {
           "step_name": "Set up Python",
           "action_type": "uses",
-          "action": "actions/setup-python@v5"
+          "action": "actions/setup-python@v4"
         },
         {
           "step_name": "Install dependencies",
