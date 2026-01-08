@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  test:
+  ci:
     runs-on: ubuntu-latest
     name: Run Python tests
     steps:
@@ -21,7 +21,6 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install -r default/requirements.txt
       - name: Run tests
         run: |
