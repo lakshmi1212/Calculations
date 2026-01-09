@@ -9,10 +9,12 @@ def test_subtract_negative_numbers():
 
 def test_subtract_mixed_sign_numbers():
     assert subtract(-5, 3) == -8
+    assert subtract(5, -3) == 8
 
 def test_subtract_zero():
+    assert subtract(0, 0) == 0
     assert subtract(0, 5) == -5
     assert subtract(5, 0) == 5
 
 def test_subtract_large_numbers():
-    assert subtract(3000000, 1000000) == 2000000
+    assert subtract(1000000, 999999) == 1
