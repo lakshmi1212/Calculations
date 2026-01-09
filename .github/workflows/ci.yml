@@ -7,11 +7,11 @@ on:
     branches:
       - main
 jobs:
-  ci_python:
+  ci_python_tests:
     runs-on: ubuntu-latest
-    name: Python CI
+    name: Run Python Tests
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
