@@ -7,19 +7,19 @@ on:
     branches:
       - main
 jobs:
-  ci_python_tests:
+  ci_python:
     runs-on: ubuntu-latest
-    name: Run Python Tests
+    name: Python CI
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
           pip install -r default/requirements.txt
-      - name: Run Pytest
+      - name: Run tests
         run: |
           python -m pytest tests/ -v --tb=short
