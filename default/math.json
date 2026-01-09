@@ -24,7 +24,14 @@
     "pytest_command": "python -m pytest tests/ -v --tb=short",
     "fail_on_error": true
   },
-  "requirements_file": "default/requirements.txt",
+  "constraints": {
+    "modify_source_files": false,
+    "modify_test_files": false
+  },
+  "commit": {
+    "enabled": true,
+    "message": "Add CI workflow for Python tests"
+  },
   "jobs": [
     {
       "job_id": "ci",
@@ -39,7 +46,7 @@
         {
           "step_name": "Set up Python",
           "action_type": "uses",
-          "action": "actions/setup-python@v5"
+          "action": "actions/setup-python@v4"
         },
         {
           "step_name": "Install dependencies",
@@ -53,9 +60,5 @@
         }
       ]
     }
-  ],
-  "commit": {
-    "enabled": true,
-    "message": "Add CI workflow for Python tests"
-  }
+  ]
 }
