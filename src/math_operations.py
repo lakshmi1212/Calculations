@@ -3,5 +3,5 @@ def add(a, b):
     return a + b
 
 def subtract(a, b):
-    """Subtract b from a and return the result."""
+    """Subtract second number from first and return the result."""
     return a - b
