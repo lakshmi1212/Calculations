@@ -16,4 +16,4 @@ def test_add_zero():
     assert add(5, 0) == 5
 
 def test_add_large_numbers():
-    assert add(1000000, 999999) == 1999999
+    assert add(1_000_000, 2_000_000) == 3_000_000
