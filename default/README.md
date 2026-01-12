@@ -1,6 +1,6 @@
 # Calculations
 
-This repository provides basic mathematical operations (addition and subtraction) implemented in Python.
+This repository provides basic math operations (addition and subtraction).
 
 ## Usage
 
@@ -9,8 +9,8 @@ Import the functions from `src/math_operations.py`:
 ```python
 from src.math_operations import add, subtract
 
-result = add(2, 3)      # Returns 5
-result2 = subtract(5, 2) # Returns 3
+result_add = add(5, 3)      # Returns 8
+result_sub = subtract(5, 3) # Returns 2
 ```
 
 ## Running Tests
@@ -21,12 +21,12 @@ Install dependencies:
 pip install -r default/requirements.txt
 ```
 
-Run all tests:
+Run tests using pytest:
 
 ```bash
 pytest tests/ -v --tb=short
 ```
 
-## Workflow
+## CI Workflow
 
-CI pipeline is configured to run tests on push or pull request to the `main` branch using `.github/workflows/ci.yml`.
+The CI workflow is defined in `.github/workflows/ci.yml` and runs tests on every push or pull request to `main`.
