@@ -6,7 +6,31 @@
   },
   "workflow": {
     "file_path": ".github/workflows/ci.yml",
-    "name": "CI Pipeline"
+    "job_id": "ci_python_tests",
+    "job_name": "Python CI",
+    "runs_on": "ubuntu-latest",
+    "steps": [
+      {
+        "step_name": "Checkout code",
+        "action_type": "uses",
+        "action": "actions/checkout@v4"
+      },
+      {
+        "step_name": "Set up Python",
+        "action_type": "uses",
+        "action": "actions/setup-python@v5"
+      },
+      {
+        "step_name": "Install dependencies",
+        "action_type": "run",
+        "command": "pip install -r default/requirements.txt"
+      },
+      {
+        "step_name": "Run tests",
+        "action_type": "run",
+        "command": "python -m pytest tests/ -v --tb=short"
+      }
+    ]
   },
   "triggers": {
     "push": [".github/workflows"],
@@ -31,34 +55,5 @@
   "commit": {
     "enabled": true,
     "message": "Add CI workflow for Python tests"
-  },
-  "jobs": [
-    {
-      "job_id": "ci",
-      "job_name": "Run Pytest",
-      "runs_on": "ubuntu-latest",
-      "steps": [
-        {
-          "step_name": "Checkout code",
-          "action_type": "uses",
-          "action": "actions/checkout@v4"
-        },
-        {
-          "step_name": "Set up Python",
-          "action_type": "uses",
-          "action": "actions/setup-python@v4"
-        },
-        {
-          "step_name": "Install dependencies",
-          "action_type": "run",
-          "command": "pip install -r default/requirements.txt"
-        },
-        {
-          "step_name": "Run tests",
-          "action_type": "run",
-          "command": "python -m pytest tests/ -v --tb=short"
-        }
-      ]
-    }
-  ]
+  }
 }
