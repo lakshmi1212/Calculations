@@ -34,8 +34,8 @@
   },
   "jobs": [
     {
-      "job_id": "test_job",
-      "job_name": "Run Pytest",
+      "job_id": "test-python",
+      "job_name": "Test Python Code",
       "runs_on": "ubuntu-latest",
       "steps": [
         {
@@ -46,10 +46,7 @@
         {
           "step_name": "Set up Python",
           "action_type": "uses",
-          "action": "actions/setup-python@v5",
-          "with": {
-            "python-version": "3.10"
-          }
+          "action": "actions/setup-python@v5"
         },
         {
           "step_name": "Install dependencies",
