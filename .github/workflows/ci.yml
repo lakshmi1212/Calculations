@@ -9,9 +9,9 @@ on:
       - main
 
 jobs:
-  test-python:
+  test_job:
     runs-on: ubuntu-latest
-    name: Test Python Code
+    name: Run Python Tests
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
