@@ -28,40 +28,41 @@
     "modify_source_files": false,
     "modify_test_files": false
   },
-  "commit": {
-    "enabled": true,
-    "message": "Add CI workflow for Python tests"
-  },
+  "requirements_file": "default/requirements.txt",
   "jobs": [
     {
-      "job_id": "ci_python_tests",
-      "job_name": "Run Python tests",
+      "job_id": "ci",
+      "job_name": "Run Python Tests",
       "runs_on": "ubuntu-latest",
       "steps": [
         {
-          "step_name": "Checkout code",
+          "step_name": "Checkout Repository",
           "action_type": "uses",
-          "action": "actions/checkout@v4"
+          "action": "actions/checkout@v3"
         },
         {
           "step_name": "Set up Python",
           "action_type": "uses",
-          "action": "actions/setup-python@v5",
+          "action": "actions/setup-python@v4",
           "with": {
             "python-version": "3.10"
           }
         },
         {
-          "step_name": "Install dependencies",
+          "step_name": "Install Dependencies",
           "action_type": "run",
           "command": "pip install -r default/requirements.txt"
         },
         {
-          "step_name": "Run tests",
+          "step_name": "Run Pytest",
           "action_type": "run",
           "command": "python -m pytest tests/ -v --tb=short"
         }
       ]
     }
-  ]
+  ],
+  "commit": {
+    "enabled": true,
+    "message": "Add CI workflow for Python tests"
+  }
 }
