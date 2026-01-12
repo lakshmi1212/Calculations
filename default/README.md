@@ -1,37 +1,32 @@
 # Calculations
 
-## Overview
-This repository provides basic math operations (addition and subtraction) with production-ready test automation integrated for CI/CD workflows.
+This repository provides basic mathematical operations (addition and subtraction) implemented in Python.
 
 ## Usage
 
-### Math Operations
-Import and use the functions from `src/math_operations.py`:
+Import the functions from `src/math_operations.py`:
 
 ```python
 from src.math_operations import add, subtract
 
-result_add = add(2, 3)
-result_subtract = subtract(5, 2)
+result = add(2, 3)      # Returns 5
+result2 = subtract(5, 2) # Returns 3
 ```
 
-### Running Tests
-Install dependencies from `default/requirements.txt` and run tests:
+## Running Tests
+
+Install dependencies:
 
 ```bash
 pip install -r default/requirements.txt
-python -m pytest tests/ -v --tb=short
 ```
 
-## CI/CD Workflow
-GitHub Actions workflow file is located at `.github/workflows/ci.yml`.
+Run all tests:
 
-## Structure
-- `src/math_operations.py`: Business logic
-- `tests/`: Pytest test cases
-- `default/README.md`: This file
-- `default/requirements.txt`: Python dependencies
-- `default/math.json`: Metadata for CI workflow
+```bash
+pytest tests/ -v --tb=short
+```
 
-## Maintainers
-QA Automation & DevOps Integration Agent
+## Workflow
+
+CI pipeline is configured to run tests on push or pull request to the `main` branch using `.github/workflows/ci.yml`.
