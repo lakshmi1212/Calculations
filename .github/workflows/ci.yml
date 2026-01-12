@@ -11,9 +11,9 @@ on:
 jobs:
   ci_python_tests:
     runs-on: ubuntu-latest
-    name: Run Python Tests
+    name: Run Python tests
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -22,6 +22,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r default/requirements.txt
-      - name: Run Pytest
+      - name: Run tests
         run: |
           python -m pytest tests/ -v --tb=short
