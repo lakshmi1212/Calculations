@@ -9,11 +9,11 @@ on:
       - main
 
 jobs:
-  test_job:
+  ci_python_tests:
     runs-on: ubuntu-latest
-    name: Run Pytest
+    name: CI Pipeline
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
       - name: Set up Python
         uses: actions/setup-python@v5
