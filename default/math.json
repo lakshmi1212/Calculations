@@ -34,8 +34,8 @@
   },
   "jobs": [
     {
-      "job_id": "test_job",
-      "job_name": "Run Pytest",
+      "job_id": "ci",
+      "job_name": "Run Python Tests",
       "runs_on": "ubuntu-latest",
       "steps": [
         {
